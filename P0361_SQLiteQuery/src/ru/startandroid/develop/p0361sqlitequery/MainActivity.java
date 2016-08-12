@@ -9,18 +9,20 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 
-public class MainActivity extends Activity implements View.OnClickListener{
+public class MainActivity extends Activity implements OnClickListener {
 
     final String LOG_TAG = "myLogs";
 
     String name[] = { "Китай", "США", "Бразилия", "Россия", "Япония",
-            "Германия", "Египет", "Италия", "Франция", "Канада"};
-    int people[] = {1400, 311, 195, 142, 128, 82, 80, 60, 66, 35 };
-    String region[] = { "Азия", "Америка", "Америка", "Европа", "Азия", "Европа", "Африка", "Европа", "Америка"};
+            "Германия", "Египет", "Италия", "Франция", "Канада" };
+    int people[] = { 1400, 311, 195, 142, 128, 82, 80, 60, 66, 35 };
+    String region[] = { "Азия", "Америка", "Америка", "Европа", "Азия",
+            "Европа", "Африка", "Европа", "Европа", "Америка" };
 
     Button btnAll, btnFunc, btnPeople, btnSort, btnGroup, btnHaving;
     EditText etFunc, etPeople, etRegionPeople;
@@ -29,7 +31,8 @@ public class MainActivity extends Activity implements View.OnClickListener{
     DBHelper dbHelper;
     SQLiteDatabase db;
 
-    @Override
+    /** Called when the activity is first created. */
+
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
@@ -59,11 +62,14 @@ public class MainActivity extends Activity implements View.OnClickListener{
         rgSort = (RadioGroup) findViewById(R.id.rgSort);
 
         dbHelper = new DBHelper(this);
+        // подключаемся к базе
         db = dbHelper.getWritableDatabase();
 
-        Cursor c = db.query("mytable", null, null, null, null, null,null);
+        // проверка существования записей
+        Cursor c = db.query("mytable", null, null, null, null, null, null);
         if (c.getCount() == 0) {
             ContentValues cv = new ContentValues();
+            // заполним таблицу
             for (int i = 0; i < 10; i++) {
                 cv.put("name", name[i]);
                 cv.put("people", people[i]);
@@ -73,7 +79,9 @@ public class MainActivity extends Activity implements View.OnClickListener{
         }
         c.close();
         dbHelper.close();
+        // эмулируем нажатие кнопки btnAll
         onClick(btnAll);
+
     }
 
     public void onClick(View v) {
