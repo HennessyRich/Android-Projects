@@ -43,7 +43,7 @@ public class MainActivity extends Activity {
         public void onDateSet(DatePicker view, int year, int monthOfYear,
                               int dayOfMonth) {
             myYear = year;
-            myMonth = monthOfYear;
+            myMonth = monthOfYear + 1;
             myDay = dayOfMonth;
             tvDate.setText("Today is " + myDay + "/" + myMonth + "/" + myYear);
         }
