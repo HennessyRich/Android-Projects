@@ -18,7 +18,7 @@ public class AdapterHelper {
 
     // названия телефонов (элементов)
     String[] phonesHTC = new String[] {"Sensation", "Desire", "Wildfire", "Hero"};
-    String[] phonesSams = new String[] {"Galaxy S II", "Galaxy Nexus", "Wave"};
+    String[] phonesSamsung = new String[] {"Galaxy S II", "Galaxy Nexus", "Wave"};
     String[] phonesLG = new String[] {"Optimus", "Optimus Link", "Optimus Black", "Optimus One"};
 
     // коллекция для групп
@@ -76,9 +76,9 @@ public class AdapterHelper {
 
         // создаем коллекцию элементов для второй группы        
         childDataItem = new ArrayList<Map<String, String>>();
-        for (String phone : phonesSams) {
+        for (String phone : phonesSamsung) {
             m = new HashMap<String, String>();
-            m.put(ATTR_PHONE_NAME, phone);
+            m.put(ATTR_PHONE_NAME, phone); // название телефона
             childDataItem.add(m);
         }
         childData.add(childDataItem);

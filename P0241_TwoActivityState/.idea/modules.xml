@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/TwoActivityState.iml" filepath="$PROJECT_DIR$/TwoActivityState.iml" />
+      <module fileurl="file://$PROJECT_DIR$/P0241_TwoActivityState.iml" filepath="$PROJECT_DIR$/P0241_TwoActivityState.iml" />
     </modules>
   </component>
 </project>

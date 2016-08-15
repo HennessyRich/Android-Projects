@@ -55,7 +55,7 @@ public class MainActivity extends Activity {
                 Log.d(LOG_TAG, "onGroupClick groupPosition = " + groupPosition +
                         " id = " + id);
                 // блокируем дальнейшую обработку события для группы с позицией 1
-                if (groupPosition == 1) return true;
+                //if (groupPosition == 1) return true;
 
                 return false;
             }

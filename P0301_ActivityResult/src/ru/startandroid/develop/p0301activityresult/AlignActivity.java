@@ -5,12 +5,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 
-/**
- * Created by Денис on 30.07.2016.
- */
-public class AlignActivity extends Activity implements View.OnClickListener {
+public class AlignActivity extends Activity implements OnClickListener {
 
     Button btnLeft;
     Button btnCenter;
@@ -33,7 +31,7 @@ public class AlignActivity extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         Intent intent = new Intent();
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.btnLeft:
                 intent.putExtra("alignment", Gravity.LEFT);
                 break;
