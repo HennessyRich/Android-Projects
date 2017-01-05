@@ -19,8 +19,7 @@ public class MainActivity extends FragmentActivity implements
     }
 
     void showDetails(int pos) {
-        DetailsFragment details = (DetailsFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.cont);
+        DetailsFragment details = (DetailsFragment) getSupportFragmentManager().findFragmentById(R.id.cont);
         if (details == null || details.getPosition() != pos) {
             details = DetailsFragment.newInstance(pos);
             getSupportFragmentManager().beginTransaction()
